@@ -115,13 +115,13 @@
     transform: translate(5px, 5px);
 }
 
-#quienes-somos h2 {
+#nosotros h2 {
     color: rgba(209, 81, 81, 0.696);
     background-color: rgb(247, 234, 234);
     transition: transform 0.3s;
 }
 
-#quienes-somos:hover {
+#nosotros:hover {
     transform: translate(5px, 5px);
 }
 
@@ -227,7 +227,6 @@ input:focus {
     background-color: rgb(210, 225, 239);
 
 }
-
 #main {
     display: grid;
     grid-area: cuerpo;
