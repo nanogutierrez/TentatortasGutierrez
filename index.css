@@ -141,6 +141,7 @@ main {
     transition: transform 0.3s;
     position: relative;
     border-radius: 5px;
+    size:0cm;
 }
 
 #imagen1:hover {
