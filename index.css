@@ -1,38 +1,80 @@
-#titulo h1 {
-    color: rgb(194, 118, 118);
-    font-size: 40px;
+#grilla {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "productos productos"
+      "precios publicidad"
+      "sucursal publicidad"
+      "footer footer";
+    
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px min max(200px,auto) 300px min max(400px, auto) 200px min max(300px, auto) 150px;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    max-width: 2000px;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(172, 207, 158, 0.221);  
+ }
+ .border {
+    border: 1px solid black;
+ }
+ section#productos {
+    grid-area: productos; 
+}    
+.productos {
+    justify-content: start; 
+}
+ section#precios {
+     grid-area: precios;
+ }
+ section#sucursal {
+    grid-area: sucursal;     
+ }
+ aside {
+    grid-area: publicidad;
+ }
+ footer {
+    grid-area: footer;
+    background-color: rgba(247, 138, 138, 0.822);
+ }  
+footer {
+    font-size: 20px;
+}
+header {
+    grid-area: header;
+    background-size: 80%;
+    font-size: 30px;
+    transition: transform 0.3s;
+ }
+ header:hover {
+    transform: transition;
+    background-image: url(https://images.aws.nestle.recipes/original/e89d19d331ac413811e3b1c11a893991_torta-princesa.jpg);
+ }
+ #titulo h1 {
+    color: rgb(244, 118, 118);
+    font-size: 30px;
     font-weight: bold;
     transition: transform 0.3s;
 }
-
 #titulo h1:hover {
     transform: translate(100px, 10px);
 }
 #productos h2 {
-    color: rgba(209, 81, 81, 0.696);
+    color: rgba(209, 81, 81, 0.558);
     background-color: rgb(247, 234, 234);
     transition: transform 0.3s;
 }
-
 #productos:hover {
     transform: translate(5px, 5px);
-}
-main {
-    display: flex;
-    flex: 1;
-    width: 2000px;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 600px;
-    padding: 0.5em;;
-}
+} 
 #tortas {
     color: rgb(163, 106, 106);
     transition: transform 0.3s;
     animation-duration: 2s;
     animation-name: aparecer;
     animation-iteration-count: infinite;
-}   
+}
 @keyframes aparecer {
     0% {
         opacity: 0;
@@ -43,8 +85,7 @@ main {
     0% {
         opacity: 0;
     }
-}
-
+}   
 #tortas:hover {
     transform: rotate(2deg);
 }
@@ -60,7 +101,6 @@ main {
 #tartas:hover {
     transform: rotate(2deg);
 }
-
 #budines {
     color: rgb(163, 106, 106);
     transition: transform 0.3s;
@@ -84,7 +124,6 @@ main {
 #chocolates:hover {
     transform: rotate(2deg);
 }
-
 #precios h2 {
     color: rgba(209, 81, 81, 0.696);
     background-color: rgb(247, 234, 234);
@@ -104,7 +143,15 @@ main {
 #sucursales:hover {
     transform: translate(5px, 5px);
 }
+#sucursal h2 {
+    color: rgba(209, 81, 81, 0.696);
+    background-color: rgb(247, 234, 234);
+    transition: transform 0.3s;
+}
 
+#sucursal:hover {
+    transform: translate(5px, 5px);
+}
 #contacto h2 {
     color: rgba(209, 81, 81, 0.696);
     background-color: rgb(247, 234, 234);
@@ -114,17 +161,6 @@ main {
 #contacto:hover {
     transform: translate(5px, 5px);
 }
-
-#nosotros h2 {
-    color: rgba(209, 81, 81, 0.696);
-    background-color: rgb(247, 234, 234);
-    transition: transform 0.3s;
-}
-
-#nosotros:hover {
-    transform: translate(5px, 5px);
-}
-
 #asociate h2 {
     color: rgba(209, 81, 81, 0.696);
     background-color: rgb(247, 234, 234);
@@ -134,14 +170,14 @@ main {
 #asociate:hover {
     transform: translate(5px, 5px);
 }
-
 #imagen1 {
     filter: blur(2px);
     filter: grayscale(0.5);
     transition: transform 0.3s;
     position: relative;
     border-radius: 5px;
-    size:0cm;
+    height: 90%;
+    width: 90%;
 }
 
 #imagen1:hover {
@@ -159,6 +195,8 @@ main {
     transition: transform 0.3s;
     position: relative;
     border-radius: 5px;
+    width: 90%;
+    height: 90%;
 }
 
 #imagen2:hover {
@@ -176,6 +214,8 @@ main {
     transition: transform 0.3s;
     position: relative;
     border-radius: 5px;
+    width: 90%;
+    height: 90%;
 }
 
 #imagen3:hover {
@@ -193,6 +233,8 @@ main {
     transition: transform 0.3s;
     position: relative;
     border-radius: 5px;
+    width: 90%;
+    height: 90%;
 }
 
 #imagen4:hover {
@@ -203,14 +245,6 @@ main {
     outline: solid 3px;
     filter: blur(0px);
 }
-
-header {
-    display: grid;
-    grid-area: encabezado;
-    background-image: url(https://images.aws.nestle.recipes/original/e89d19d331ac413811e3b1c11a893991_torta-princesa.jpg);
-    background-size: 100%;
-}
-
 input[type=checkbox] {
     transition: all 0.5s;
 }
@@ -226,14 +260,8 @@ input {
 
 input:focus {
     background-color: rgb(210, 225, 239);
-
 }
-#main {
-    display: grid;
-    grid-area: cuerpo;
-    grid-template-columns:auto;
-    grid-template-rows: auto;
-    max-width: 100%;
-    background-color: rgba(172, 207, 158, 0.221);
-    background-size: 100%;
+.card {
+    height: 80%;
+    width: 50%;
 }
